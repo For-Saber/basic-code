@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/JavaDay02/JavaDay02.iml" filepath="$PROJECT_DIR$/JavaDay02/JavaDay02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaDay03/JavaDay03.iml" filepath="$PROJECT_DIR$/JavaDay03/JavaDay03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaDay04/JavaDay04.iml" filepath="$PROJECT_DIR$/JavaDay04/JavaDay04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaDay05/JavaDay05.iml" filepath="$PROJECT_DIR$/JavaDay05/JavaDay05.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaDay06/JavaDay06.iml" filepath="$PROJECT_DIR$/JavaDay06/JavaDay06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaDay07/JavaDay07.iml" filepath="$PROJECT_DIR$/JavaDay07/JavaDay07.iml" />
+    </modules>
+  </component>
+</project>
