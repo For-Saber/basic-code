@@ -41,12 +41,12 @@ public class Player {
 //        remainHealth=remainHealth<0?0:remainHealth;//非负判定
 
         if (player.getHealth() <= damage) {
-            System.out.println(this.getPlayername() + "挥起拳头打了" + player.getPlayername() + "一下，造成了" + player.getHealth() + "点伤害");
+            System.out.print(this.getPlayername() + "挥起拳头打了" + player.getPlayername() + "一下，造成了" + player.getHealth() + "点伤害，");
             player.setHealth(0);
             System.out.println(this.getPlayername() + "K.O.了" + player.playername);
         } else {
             player.setHealth(player.getHealth() - damage);
-            System.out.println(this.getPlayername() + "挥起拳头打了" + player.getPlayername() + "一下，造成了" + damage + "点伤害");
+            System.out.print(this.getPlayername() + "挥起拳头打了" + player.getPlayername() + "一下，造成了" + damage + "点伤害，");
             System.out.println(player.getPlayername()+"还剩"+player.getHealth()+"点生命值");
         }
     }
