@@ -37,6 +37,9 @@ public class Player {
 
         Random r = new Random();
         int damage = r.nextInt(20) + 1;
+//        int remainHealth= player.getHealth()-damage;
+//        remainHealth=remainHealth<0?0:remainHealth;//非负判定
+
         if (player.getHealth() <= damage) {
             System.out.println(this.getPlayername() + "挥起拳头打了" + player.getPlayername() + "一下，造成了" + player.getHealth() + "点伤害");
             player.setHealth(0);
