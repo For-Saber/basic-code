@@ -2,7 +2,7 @@ package com.itheima.test.test7;
 
 import java.util.Scanner;
 
-public class TestDelete {
+public class TestModify {
     public static void main(String[] args) {
 
         Student[] arr = new Student[3];
@@ -15,25 +15,25 @@ public class TestDelete {
         arr[1] = s2;
         arr[2] = s3;
 
-        int delIndex;
+        int modIndex;
         Scanner sc = new Scanner(System.in);
 
         while (true) {
-            System.out.println("请输入欲删除的ID：");
-            String delID = sc.next();
-            delIndex = getIndex(arr, delID);
+            System.out.println("请输入欲修改学生的ID：");
+            String modID = sc.next();
+            modIndex = getIndex(arr, modID);
 
-            if (delIndex == -1) {
-                System.out.println("删除失败，当前ID不存在！");
+            if (modIndex == -1) {
+                System.out.println("修改失败，当前ID不存在！");
             } else {
-                arr[delIndex] = null;
-                System.out.println("删除成功！");
+                System.out.println("年龄修改为：");
+                int newAge=sc.nextInt();
+                arr[modIndex].setAge(newAge);
+                System.out.println("修改成功！");
                 break;
             }
         }
-
-        getInfo(arr);
-
+            getInfo(arr);
     }
 
     public static int getIndex(Student[] arr, String id) {
