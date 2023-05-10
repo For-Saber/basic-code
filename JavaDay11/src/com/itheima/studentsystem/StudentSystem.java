@@ -11,7 +11,7 @@ public class StudentSystem {
 
         while (true) {
             mainMenu();
-            selectOptions();
+            selectOptions(list);
 
 
         }
@@ -29,13 +29,13 @@ public class StudentSystem {
 
     }
 
-    public static void selectOptions() {
+    public static void selectOptions(ArrayList<Student> list) {
 
         Scanner sc = new Scanner(System.in);
         char c = sc.next().charAt(0);
         switch (c) {
-            //TODO
-            //TODO
+            case '1'-> addStudent(list);
+            case '2'-> deleteStudent(list);
             //TODO
             //TODO
             case '0' -> System.exit(0);
@@ -79,10 +79,12 @@ public class StudentSystem {
 
     }
 
-    public static void deleteStudent(ArrayList<Student> list, String deleteSid) {
+    public static void deleteStudent(ArrayList<Student> list) {
 
         System.out.println(new String(new char[50]).replace("\0", "\r\n"));//伪清屏
         System.out.println("请输入要删除的学生ID：");
+        Scanner sc=new Scanner(System.in);
+        String deleteSid=sc.next();
 
         if (contains(list, deleteSid)) {
             for (int i = 0; i < list.size(); i++) {
@@ -116,6 +118,7 @@ public class StudentSystem {
 
             int index=getIndexByID(list,sid);
             list.set(index,stu);
+            System.out.println("修改成功！");
 
         }
 
