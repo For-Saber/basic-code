@@ -6,6 +6,7 @@ import java.util.Random;
 public class Test04 {
     public static void main(String[] args) {
 
+        //验证码
         char[] arr = new char[52];
         String str="";
         Random r=new Random();
@@ -24,9 +25,10 @@ public class Test04 {
         str+=r.nextInt(10);
         char[] newArr=str.toCharArray();
         newArr=randomSort(newArr);
+        str="";
 
         for (int i = 0; i < newArr.length; i++) {
-            System.out.print(newArr[i]);
+            str+=newArr[i];
         }
 
     }
