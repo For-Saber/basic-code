@@ -12,14 +12,12 @@ public class StudentSystem {
         while (true) {
             mainMenu();
             selectOptions(list);
-
-
         }
     }
 
     public static void mainMenu() {
 
-        System.out.println(new String(new char[50]).replace("\0", "\r\n"));//伪清屏
+        System.out.println();
         System.out.println("------------------学生管理系统------------------");
         System.out.println("1.添加学生");
         System.out.println("2.删除学生");
@@ -34,16 +32,12 @@ public class StudentSystem {
         Scanner sc = new Scanner(System.in);
         char c = sc.next().charAt(0);
         switch (c) {
-            case '1'-> addStudent(list);
-            case '2'-> deleteStudent(list);
-            //TODO
-            //TODO
+            case '1' -> addStudent(list);
+            case '2' -> deleteStudent(list);
+            case '3' -> editStudent(list);
+            case '4' -> getAllInfo(list);
             case '0' -> System.exit(0);
         }
-    }
-
-    public static void createList() {
-
     }
 
     public static void addStudent(ArrayList<Student> list) {
@@ -62,8 +56,7 @@ public class StudentSystem {
             else break;
         }
 
-        stu.setName(newSid);
-
+        stu.setSid(newSid);
         System.out.println("请输入要添加的学生姓名：");
         String newName = sc.next();
         stu.setName(newName);
@@ -75,37 +68,40 @@ public class StudentSystem {
         stu.setAddress(newAddress);
 
         list.add(stu);
-        System.out.println("添加成功！");
-
+        System.out.println("添加成功！输入任意字符继续。");
+        sc.next();
     }
 
     public static void deleteStudent(ArrayList<Student> list) {
 
         System.out.println(new String(new char[50]).replace("\0", "\r\n"));//伪清屏
         System.out.println("请输入要删除的学生ID：");
-        Scanner sc=new Scanner(System.in);
-        String deleteSid=sc.next();
+        Scanner sc = new Scanner(System.in);
+        String deleteSid = sc.next();
 
         if (contains(list, deleteSid)) {
             for (int i = 0; i < list.size(); i++) {
                 Student stu = list.get(i);
                 list.remove(stu);
-                System.out.println("删除成功！");
+                System.out.println("删除成功！输入任意字符继续。");
+                sc.next();
             }
+        } else {
+            System.out.println("没有查询到对应的学生ID！输入任意字符继续。");
+            sc.next();
         }
-        else System.out.println("没有查询到对应的学生ID！");
     }
 
     public static void editStudent(ArrayList<Student> list) {
 
         System.out.println(new String(new char[50]).replace("\0", "\r\n"));//伪清屏
         System.out.println("请输入要修改的学生ID：");
-        Scanner sc=new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         String sid = sc.next();
         if (contains(list,sid)){
 
-            Student stu=new Student();
-            stu.setName(sid);
+            Student stu = new Student();
+            stu.setSid(sid);
             System.out.println("请输入新的学生姓名：");
             String newName = sc.next();
             stu.setName(newName);
@@ -116,13 +112,13 @@ public class StudentSystem {
             String newAddress = sc.next();
             stu.setAddress(newAddress);
 
-            int index=getIndexByID(list,sid);
-            list.set(index,stu);
-            System.out.println("修改成功！");
-
+            int index = getIndexByID(list, sid);
+            list.set(index, stu);
+            System.out.println("修改成功！输入任意字符继续。");
+        } else {
+            System.out.println("没有查询到对应的学生ID！");
         }
-
-        else System.out.println("没有查询到对应的学生ID！");
+        sc.next();
     }
 
     public static void getAllInfo(ArrayList<Student> list) {
@@ -141,7 +137,9 @@ public class StudentSystem {
 
         }
 
-        System.out.println("\n查询完毕。");
+        System.out.println("\n查询完毕。输入任意字符继续。");
+        Scanner sc = new Scanner(System.in);
+        sc.next();
 
     }
 
