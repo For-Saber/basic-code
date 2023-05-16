@@ -23,4 +23,9 @@ public class Dog extends Animal {
     public void watchHouse() {
         System.out.println("看家");
     }
+
+    @Override
+    public void cry() {
+        System.out.println("汪汪汪");
+    }
 }

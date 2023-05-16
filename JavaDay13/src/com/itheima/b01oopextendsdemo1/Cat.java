@@ -12,4 +12,9 @@ public class Cat extends Animal {
     public void catchMouse() {
         System.out.println("猫抓老鼠");
     }
+
+    @Override
+    public void cry() {
+        System.out.println("喵喵喵");
+    }
 }

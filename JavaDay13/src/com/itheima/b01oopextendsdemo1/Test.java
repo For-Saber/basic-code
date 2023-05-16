@@ -9,5 +9,9 @@ public class Test {
 
         Cat c=new Cat("中华田园猫",3,"黄色");
         System.out.println(c.getName()+" "+c.getAge()+" "+c.getColor());
+        c.cry();
+
+        Husky h= new Husky();
+        h.cry();
     }
 }

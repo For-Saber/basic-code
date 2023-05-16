@@ -39,11 +39,15 @@ public class Animal {
         this.color = color;
     }
 
-    public void eat(){
+    public void eat() {
         System.out.println("吃东西");
     }
 
-    public void drink(){
+    public void drink() {
         System.out.println("喝水");
+    }
+
+    public void cry(){
+        System.out.println("动物都会叫");
     }
 }
